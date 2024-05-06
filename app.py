@@ -17,6 +17,16 @@ def handle_form():
     # Validate ID number (assuming 台灣ID)
     if len(id_number)!=10:
         return "身分證號碼應該為10碼", 400
+        
+    if not id_number[0].isalpha():
+        return "第一個字元應該為英文字母碼", 400
+        
+    if not id_number[1:].isdigit():
+        return "後九個字元應該為數字", 400
+
+
+
+
 
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
