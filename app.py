@@ -81,6 +81,11 @@ def handle_form():
     else:
         return "身分證號碼第一個英文字母應該轉換為對應數字", 400
 
+    def calculate_checksums(number):
+    checksum1 = number // 10
+    checksum2 = number % 10
+    return checksum1, checksum2
+
 
 
 
